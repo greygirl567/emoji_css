@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emoji</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .emoji{
+            position: relative;
+            margin: 0 auto;
+            margin-top: 200px;
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 225, 58);
+            border: 6px solid rgb(243, 191, 4);
+            border-radius: 50%;
+        }
+        .eye-left-top,.eye-left-middle,.eye-left-bottom{
+            position: absolute;
+            top: 28%;
+            left: 14%;
+            width: 82px;
+            height: 10px;
+            background-color: rgb(156, 75, 21);
+            border-radius: 20px 20px 20px 20px;
+        }
+        .eye-left-top{
+            position: absolute;
+            top: 27%;
+            left: 14%;
+        }
+        .eye-left-middle{
+            position: absolute;
+            top: 34%;
+            left: 13%;
+        }
+        .eye-left-bottom{
+            position: absolute;
+            top: 40%;
+            left: 14%;
+        }
+        .eye-left-top{
+            transform: rotate(24deg);
+        }
+        .eye-left-bottom{
+            transform: rotate(-28deg);
+        }
+        
+        .eye-right-top,.eye-right-middle,.eye-right-bottom{
+            position: absolute;
+            top: 28%;
+            right: 14%;
+            width: 82px;
+            height: 10px;
+            background-color: rgb(156, 75, 21);
+            border-radius: 20px 20px 20px 20px;
+        }
+        .eye-right-top{
+            position: absolute;
+            top: 27%;
+            right: 14%;
+        }
+        .eye-right-middle{
+            position: absolute;
+            top: 34%;
+            right: 13%;
+        }
+        .eye-right-bottom{
+            position: absolute;
+            top: 40%;
+            right: 14%;
+        }
+        .eye-right-top{
+            transform: rotate(336deg);
+        }
+        .eye-right-bottom{
+            transform: rotate(-332deg);
+        }
+        .blush-left,.blush-right{
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle,rgb(255, 141, 109),rgb(255, 225, 58),rgb(255, 225, 58));
+        }
+        .blush-left{
+            position: absolute;
+            top: 34%;
+            left: 3%;
+        }
+        .blush-right{
+            position: absolute;
+            top: 34%;
+            right: 3%;
+        }
+        .mouth-left-top-hide,.mouth-right-top-hide{
+            width: 73px;
+            height: 30px;
+            background-color: rgb(255, 225, 58);
+        }
+        .mouth-left-top-hide{
+            position: absolute;
+            top: 40%;
+            left: 40%;
+        }
+        .mouth-right-top-hide{
+            position: absolute;
+            top: 40%;
+            right: 40%;
+        }
+        .mouth-left-top,.mouth-right-top{
+            width: 28px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: rgb(255, 225, 58);
+        }
+        .mouth-left-top{
+            position: absolute;
+            top: 45%;
+            left: 40%;
+        }
+        .mouth-right-top{
+            position: absolute;
+            top: 45%;
+            right: 40%;
+        }
+        .mouth-left,.mouth-right{
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: rgb(156, 75, 21);
+        }
+        .mouth-left{
+            position: absolute;
+            top: 45%;
+            left: 39%;
+        }
+        .mouth-right{
+            position: absolute;
+            top: 45%;
+            right: 39%;
+        }
+        .hand-left-top,.hand-left-bottom{
+            width: 39px;
+            height: 40px;
+            background-color: rgb(255, 225, 58);
+            border: 6px solid rgb(243, 191, 4);
+            border-radius: 45% 45% 35% 35%;
+        }
+        .hand-right-top,.hand-right-bottom{
+            width: 39px;
+            height: 40px;
+            background-color: rgb(255, 225, 58);
+            border: 6px solid rgb(243, 191, 4);
+            border-radius: 38% 38% 46% 46%;
+        }
+        .hand-left-bottom{
+            transform: rotate(-24deg);
+        }
+        .hand-right-bottom{
+            transform: rotate(24deg);
+        }
+        .hand-left-top{
+            position: absolute;
+            top: 72%;
+            left: 4%;
+        }
+        .hand-left-bottom{
+            position: absolute;
+            top: 81%;
+            left: 5%;
+        }
+        .hand-right-top{
+            position: absolute;
+            top: 72%;
+            right: 4%;
+        }
+        .hand-right-bottom{
+            position: absolute;
+            top: 80%;
+            right: 5%;
+        }
+        .hand-left-middle,.hand-right-middle{
+            width: 38px;
+            height: 26px;
+            background-color: rgb(255, 225, 58);
+            border-radius: 18%;
+        }
+        .hand-left-middle{
+            position: absolute;
+            top: 83%;
+            left: 6.6%;
+            transform: rotate(-8.8deg);
+        }
+        
+        .hand-right-middle{
+            position: absolute;
+            top: 83%;
+            right: 6.6%;
+            transform: rotate(8.8deg);
+        }
+
+        .heart{
+            position: relative;
+            top: 41.5%;
+            left: 33.8%;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 38, 38);
+            transform: rotate(45deg);
+        }
+        .heart::before,.heart::after{
+            position: absolute;
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 38, 38);
+            border-radius: 50%;
+        }
+        .heart::before{
+            top: -50px;
+        }
+        .heart::after{
+           left: -50px;
+        }
+        .heart-back{
+            position: relative;
+            top: 77%;
+            left: 32%;
+            width: 110px;
+            height: 110px;
+            background-color: rgb(216, 16, 16);
+            transform: rotate(45deg);
+        }
+        .heart-back::before,.heart-back::after{
+            position: absolute;
+            content: "";
+            width: 110px;
+            height: 110px;
+            background-color: rgb(216, 16, 16);
+            border-radius: 50%;
+        }
+        .heart-back::before{
+            top: -55px;
+        }
+        .heart-back::after{
+           left: -55px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="emoji">
+        <div class="blush-left"></div>
+        <div class="blush-right"></div>
+        <div class="mouth-left"></div>
+        <div class="mouth-right"></div>
+        <div class="mouth-left-top"></div>
+        <div class="mouth-right-top"></div>
+        <div class="mouth-left-top-hide"></div>
+        <div class="mouth-right-top-hide"></div>
+        <div class="eye-left-top"></div>
+        <div class="eye-left-middle"></div>
+        <div class="eye-left-bottom"></div>
+        <div class="eye-right-top"></div>
+        <div class="eye-right-middle"></div>
+        <div class="eye-right-bottom"></div>
+        <div class="heart-back"></div>
+        <div class="heart"></div>
+        <div class="hand-left-bottom"></div>
+        <div class="hand-right-bottom"></div>
+        <div class="hand-left-top"></div>
+        <div class="hand-right-top"></div>
+        <div class="hand-left-middle"></div>
+        <div class="hand-right-middle"></div>
+    </div>
+</body>
+</html>
